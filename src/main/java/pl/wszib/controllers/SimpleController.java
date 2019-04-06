@@ -81,8 +81,13 @@ public class SimpleController {
 
     @GetMapping("fragments")
     public String fragments(Model model){
-
         return "fragments/fragmentsTemplate";
+    }
+
+
+    @GetMapping("fragments2")
+    public String fragments2(Model model){
+        return "fragments/fragmentsTemplate2";
     }
 
 
