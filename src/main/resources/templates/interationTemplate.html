@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+
+    <table>
+        <thead>
+            <th>lp.</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Telefon</th>
+            <th>Pensja</th>
+        </thead>
+       <tbody>
+            <tr th:each="person,  iterStat : ${list}" th:if="${person.visible}">
+                <td th:text="${iterStat.index}"></td>
+                <td th:text="${person.firstName}"></td>
+                <td th:text="${person.lastName}"></td>
+                <td th:text="${person.phoneNUmber}"></td>
+                <td th:text="|${#numbers.formatDecimal(person.salary, 1, 2)} PLN|"></td>
+            </tr>
+       </tbody>
+
+    </table>
+
+
+</body>
+</html>
